@@ -1,10 +1,6 @@
-import sys
+import pyttsx3
 
-names = ['Felix', 'Maria', 'Wilma', 'Vic', 'Bia']
-
-if 'Bob' in names:
-	print('Found')
-	sys.exit(0)
-
-print('Not found')
-sys.exit(1)
+engine = pyttsx3.init()
+user = str(input('Type to text to speech: '))
+engine.say(user)
+engine.runAndWait()
