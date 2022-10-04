@@ -14,14 +14,14 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
+ # reading teams from csv file and converting it to a dictionary inside teams list, while casting rating to integer
     teams = []
-    # reading teams from csv file and converting it to a dictionary inside teams list, while casting rating to integer
     filename = sys.argv[1]
     with open(filename) as file:
         reader = csv.DictReader(file)
-        for team in reader:
-            team['rating'] = int(team['rating'])
-            teams.append(team)
+        for row in reader:
+            row["rating"] = int(row["rating"])
+            teams.append(row)
 
     # keeping track of number os wins for each team
     counts = {}
@@ -63,7 +63,7 @@ def simulate_tournament(teams):
     # Simulating a tournament with remaining teams. Returning name of winning team.
     while len(teams) > 1:
         teams = simulate_round(teams)
-        return teams[0]['team']
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
