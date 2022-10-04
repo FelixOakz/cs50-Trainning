@@ -8,4 +8,4 @@ with open('2018m.csv') as file:
 		team['rating'] = int(team['rating'])
 		teams.append(team)
 
-print(team)
+print(teams)
