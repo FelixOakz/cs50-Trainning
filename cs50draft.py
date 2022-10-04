@@ -1,6 +1,7 @@
 import csv
+
 teams = []
-# TODO: Read teams into memory from file
+# reading teams from csv file and converting it to a dictionary inside teams list, while casting rating to integer
 
 with open('2018m.csv') as file:
 	reader = csv.DictReader(file)
@@ -8,4 +9,5 @@ with open('2018m.csv') as file:
 		team['rating'] = int(team['rating'])
 		teams.append(team)
 
-print(teams)
+for i in teams:
+	print(i)
