@@ -26,7 +26,7 @@ def main():
     # keeping track of number os wins for each team
     counts = {}
     for i in range(N):
-        winner = simulate_tournament(team)
+        winner = simulate_tournament(teams)
         if winner in counts:
             counts[winner] += 1
         else:
