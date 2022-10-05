@@ -1,13 +1,7 @@
-import csv
-
-teams = []
-# reading teams from csv file and converting it to a dictionary inside teams list, while casting rating to integer
-
-with open('2018m.csv') as file:
-	reader = csv.DictReader(file)
-	for team in reader:
-		team['rating'] = int(team['rating'])
-		teams.append(team)
-
-for i in teams:
-	print(i)
+text = str(input('Text: '))
+letters = 0
+for i in range(len(text.replace(' ', ''))):
+	if i != " ":
+		letters += 1
+print(text)
+print(letters)
