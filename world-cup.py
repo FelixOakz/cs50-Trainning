@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simulations to run
-N = 1000
+N = 10000
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
     with open(filename) as file:
         reader = csv.DictReader(file)
         for row in reader:
-            row["rating"] = int(row["rating"])
+            row["rating"] = float(row["rating"])
             teams.append(row)
 
     # keeping track of number os wins for each team
