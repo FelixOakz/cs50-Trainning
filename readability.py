@@ -1,24 +1,25 @@
 # accept text as string from user
-text = str(input('Text: '))
+text = str(input('Text: ')).upper()
 letters = sentences = 0
 words = 1
 
 #counting leters, using isalpha function from cs50 manuals
 for i in range(len(text)):
-	if i != " ":
-		text = text.replace(' ', '')
+	if text[i] >= 'A' and text[i] <= 'Z':
 		letters += 1
-	elif i == ' ':
-		words += words
-	elif '!' in i or '?' in i or '.' in i:
-		sentences += sentences
+	elif text[i] == ' ':
+		words += 1
+	elif text[i] == '.' or text[i] == '?' or text[i] == '!':
+		sentences += 1
 
 # using given formula to calculate score
-S = int(sentences / words * 100)
-L = int(letters / words * 100)
-grade = 0.0588 * L - 0.296 * S - 15.8
+S = float(sentences) / words * 100
+L = float(letters) / words * 100
+
+g = (0.0588 * float(L)) - (0.296 * float(S)) - 15.8
+grade = round(g)
+
 # printing result according to computed score
-print(letters, sentences, words)
 if grade < 1:
 	print('Before grade 1.')
 elif grade > 16:
