@@ -17,3 +17,4 @@ change %= 5
 coins += change // 1
 # print expected result
 print(coins)
+print('end')
