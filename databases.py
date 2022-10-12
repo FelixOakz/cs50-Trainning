@@ -1,5 +1,4 @@
 # Imports titles and genres from CSV into a SQLite database
-
 import cs50
 import csv
 
